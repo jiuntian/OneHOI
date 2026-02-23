@@ -1,0 +1,115 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+.env/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Linux
+*.swp
+*.swo
+
+# Node
+node_modules/
+npm-debug.log*
+
+# General
+*.bak
+*.tmp
+*.orig
+
+# Git
+*.orig
+*.rej
+*.patch
+*.un~
+*.lock
+*.gz
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Ignore local configuration files
+*.local
+*.env
+.env.*
+
+# Ignore database files
+*.sqlite3
+*.db
+
+# Ignore coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Ignore test output
+test-output/
+junit-*.xml
+
+# Ignore static files
+staticfiles/
+static/
+media/
+mediafiles/
+
+# Ignore dataset
+hicodet_kontext_dataset/
+hicodet_kontext_dataset_1024/
+.cache/
+dog/
+kontext-dog/
+kontext-i2i/
+data/
+
+# Ignore wandb
+wandb/
+outputs/
+v1-a6000/
+debug/
+generated/
+test/
+edits/
+
+# ignore not important files
+notebooks/selected_hicodet_*.json
+attn_map*.png
+test*.jpg
+test*.png
+debug*.png
+debug_*.pt
+gpu.py
+
+attn_maps-flux-dev/
+mixed-hoi*.jpg
+debug*.jpg
+fix_hoi_synthsis_datasets.sh
+eligen_bf16.safetensors

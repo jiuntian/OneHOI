@@ -1,0 +1,758 @@
+/* ============================================
+   OneHOI - Academic Research Page Stylesheet
+   ============================================ */
+
+:root {
+    --primary: #ffde00;
+    --primary-light: #fff3b0;
+    --secondary: #fffdf0;
+    --text-primary: #1a1a2e;
+    --text-secondary: #4a4a6a;
+    --text-muted: #7a7a9a;
+    --bg-white: #ffffff;
+    --bg-light: #fafafa;
+    --border: #e8e8f0;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.1);
+    --radius: 10px;
+    --radius-lg: 16px;
+    --max-width: 900px;
+    --transition: 0.25s ease;
+}
+
+/* Reset & Base */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text-primary);
+    background: var(--secondary);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ============================================
+   Header
+   ============================================ */
+
+header {
+    text-align: center;
+    padding: 64px 0 40px;
+    background: var(--secondary);
+}
+
+.paper-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.title-main {
+    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--primary), #e6c800);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+}
+
+.authors {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    font-weight: 400;
+}
+
+.author {
+    display: inline-block;
+    margin: 0 4px;
+}
+
+.author a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+.author a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+.author sup {
+    color: #c4a800;
+    font-weight: 600;
+}
+
+.affiliations {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.affiliation {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.affiliation sup {
+    color: #c4a800;
+    font-weight: 600;
+}
+
+/* Venue */
+.venue {
+    margin-bottom: 10px;
+}
+
+.venue-badge {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.02em;
+}
+
+/* Buttons */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--transition);
+    border: 1.5px solid transparent;
+}
+
+.btn-primary {
+    background: var(--text-primary);
+    color: var(--bg-white);
+    border-color: var(--text-primary);
+}
+
+.btn-primary:hover {
+    background: transparent;
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+    background: var(--bg-white);
+    color: var(--text-primary);
+    border-color: var(--border);
+}
+
+.btn-secondary:hover {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn.disabled {
+    opacity: 0.6;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* ============================================
+   Teaser
+   ============================================ */
+
+.teaser {
+    padding: 20px 0 40px;
+    background: var(--secondary);
+}
+
+.teaser figure {
+    margin: 0;
+}
+
+.teaser img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: block;
+}
+
+.teaser figcaption {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    text-align: justify;
+    padding: 0 16px;
+}
+
+/* ============================================
+   Content Sections
+   ============================================ */
+
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section h2 i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+/* Abstract */
+.abstract {
+    background: var(--bg-white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.abstract p {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    text-align: justify;
+}
+
+/* Related Links */
+.related-links {
+    background: var(--bg-white);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.links-list {
+    list-style: none;
+    padding: 0;
+}
+
+.links-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.links-list li:last-child {
+    border-bottom: none;
+}
+
+.links-list a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color var(--transition);
+}
+
+.links-list a:hover {
+    color: var(--text-primary);
+    text-decoration: underline;
+}
+
+/* BibTeX */
+.bibtex {
+    background: var(--secondary);
+}
+
+.bibtex-prompt {
+    font-size: 0.92rem;
+    color: var(--text-secondary);
+    margin-bottom: 14px;
+}
+
+.code-block {
+    position: relative;
+    background: var(--text-primary);
+    border-radius: var(--radius);
+    padding: 24px;
+    overflow-x: auto;
+}
+
+.code-block pre {
+    margin: 0;
+}
+
+.code-block code {
+    font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+    font-size: 0.85rem;
+    color: #e0e0e0;
+    line-height: 1.6;
+    white-space: pre;
+}
+
+.copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: #aaa;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 0.85rem;
+}
+
+.copy-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--primary);
+}
+
+/* ============================================
+   Interactive Demo
+   ============================================ */
+
+.demo {
+    background: var(--secondary);
+    padding: 40px 0 50px;
+}
+
+.demo .container {
+    max-width: 960px;
+}
+
+.demo-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.demo-workflow-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.demo-workflow-tab {
+    padding: 7px 20px;
+    border-radius: 50px;
+    border: 1.5px solid var(--border);
+    background: var(--bg-white);
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+
+.demo-workflow-tab.active {
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--bg-white);
+}
+
+.demo-workflow-tab:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--text-primary);
+}
+
+.demo-step-label {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.demo-steps-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.demo-step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--border);
+    background: var(--bg-white);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: inherit;
+}
+
+.demo-step-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--text-primary);
+    transform: scale(1.1);
+}
+
+.demo-step-dot:hover:not(.active) {
+    border-color: var(--primary);
+    color: var(--text-primary);
+}
+
+/* Interface layout */
+.demo-interface {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.demo-panel {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+}
+
+.demo-input-panel {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-output-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-panel-header {
+    background: var(--bg-light);
+    padding: 10px 16px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--border);
+}
+
+/* Prompt box */
+.demo-input-row {
+    padding: 12px 16px;
+}
+
+.demo-field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.demo-prompt-box {
+    min-height: 48px;
+    padding: 10px 14px;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    line-height: 1.5;
+    position: relative;
+}
+
+.demo-prompt-box.typing::after {
+    content: '|';
+    animation: blink 0.6s infinite;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+.hl-red {
+    color: #e53e3e;
+    font-weight: 600;
+}
+
+.hl-green {
+    color: #38a169;
+    font-weight: 600;
+}
+
+/* Image containers */
+.demo-images-row {
+    display: flex;
+    gap: 10px;
+    padding: 0 16px 12px;
+    flex: 1;
+}
+
+.demo-img-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-img-container label {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.demo-img-wrap {
+    flex: 1;
+    aspect-ratio: 1;
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    position: relative;
+}
+
+.demo-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.demo-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    gap: 6px;
+}
+
+.demo-img-overlay i {
+    font-size: 1.4rem;
+    opacity: 0.4;
+}
+
+.demo-img-overlay span {
+    opacity: 0.6;
+}
+
+/* Action button */
+.demo-action-btn {
+    margin: 8px 16px 14px;
+    padding: 10px 24px;
+    background: var(--text-primary);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-family: inherit;
+}
+
+.demo-action-btn:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.demo-action-btn.pulse {
+    animation: pulse-btn 1.2s infinite;
+    opacity: 1;
+}
+
+@keyframes pulse-btn {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 222, 0, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 14px rgba(255, 222, 0, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 222, 0, 0);
+    }
+}
+
+.demo-action-btn.clicked {
+    background: var(--primary);
+    color: var(--text-primary);
+    transform: scale(0.92);
+    opacity: 1;
+}
+
+.demo-action-btn.done {
+    background: #38a169;
+    color: white;
+    opacity: 1;
+}
+
+/* Arrow */
+.demo-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: var(--text-muted);
+    padding: 0 4px;
+}
+
+/* Output */
+.demo-output-wrap {
+    flex: 1;
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.demo-output-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.demo-output-wrap .demo-img-overlay {
+    background: var(--bg-light);
+}
+
+/* Demo responsive */
+@media (max-width: 768px) {
+    .demo-interface {
+        flex-direction: column;
+    }
+
+    .demo-arrow {
+        transform: rotate(90deg);
+        padding: 8px 0;
+    }
+
+    .demo-images-row {
+        flex-direction: row;
+    }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+
+footer {
+    text-align: center;
+    padding: 32px 0;
+    border-top: 1px solid var(--border);
+    background: var(--secondary);
+}
+
+footer p {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+}
+
+footer a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: color var(--transition);
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+    .paper-title {
+        font-size: 1.7rem;
+    }
+
+    header {
+        padding: 48px 0 32px;
+    }
+
+    .links {
+        gap: 8px;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+
+    section {
+        padding: 32px 0;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .paper-title {
+        font-size: 1.4rem;
+    }
+
+    .authors {
+        font-size: 0.95rem;
+    }
+
+    .teaser figcaption {
+        font-size: 0.82rem;
+        text-align: left;
+    }
+}

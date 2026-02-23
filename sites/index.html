@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneHOI: Unifying Human-Object Interaction Generation and Editing</title>
+    <meta name="description"
+        content="OneHOI: A unified model for human-object interaction generation and editing, supporting text-guided changes, layout-guided control, and multi-HOI edits.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1 class="paper-title">
+                <span class="title-main">OneHOI</span>: Unifying Human-Object Interaction Generation and Editing
+            </h1>
+
+            <div class="authors">
+                <span class="author"><a href="https://jiuntian.com/" target="_blank">Jiun Tian
+                        Hoe</a><sup>1</sup></span>,
+                <span class="author"><a href="https://scholar.google.com/citations?user=zo6ni_gAAAAJ"
+                        target="_blank">Weipeng Hu</a><sup>1,2</sup></span>,
+                <span class="author"><a href="https://personal.ntu.edu.sg/exdjiang/" target="_blank">Xudong
+                        Jiang</a><sup>1</sup></span>,
+                <span class="author"><a href="https://vinuni.edu.vn/people/tan-yap-peng/" target="_blank">Yap-Peng
+                        Tan</a><sup>1,4</sup></span>,
+                <span class="author"><a href="http://cs-chan.com" target="_blank">Chee Seng Chan</a><sup>3</sup></span>
+            </div>
+
+            <div class="affiliations">
+                <span class="affiliation"><sup>1</sup>Nanyang Technological University</span>
+                <span class="affiliation"><sup>2</sup>Sun Yat-sen University</span>
+                <span class="affiliation"><sup>3</sup>Universiti Malaya</span>
+                <span class="affiliation"><sup>4</sup>VinUniversity</span>
+            </div>
+
+            <div class="venue">
+                <span class="venue-badge">CVPR 2026</span>
+            </div>
+
+            <div class="links">
+                <a href="#" class="btn btn-primary disabled"><i class="fas fa-file-pdf"></i> Paper (Coming Soon)</a>
+                <a href="#" class="btn btn-secondary disabled"><i class="fab fa-github"></i> Code (Coming Soon)</a>
+                <a href="#" class="btn btn-secondary disabled"><i class="fas fa-database"></i> Data (Coming Soon)</a>
+                <!-- <a href="#" class="btn btn-secondary"><i class="fab fa-youtube"></i> Video</a> -->
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Teaser -->
+        <section class="teaser">
+            <div class="container">
+                <figure>
+                    <img src="res/teaser.jpg"
+                        alt="OneHOI teaser figure showing human-object interaction generation and editing capabilities">
+                    <figcaption>
+                        <strong>OneHOI</strong> unifies Human-Object Interaction (HOI) generation and editing in a
+                        single, versatile model. It excels at challenging HOI editing, from text-guided changes to novel
+                        layout-guided control and novel multi-HOI edits. For generation, <strong>OneHOI</strong>
+                        synthesises scenes from text, layouts, arbitrary shapes, or mixed conditions, offering
+                        unprecedented control over relational understanding in images.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- Interactive Demo -->
+        <section class="demo" id="demo">
+            <div class="container">
+                <h2><i class="fas fa-play-circle"></i> Interactive Demo</h2>
+                <p class="demo-subtitle">Watch <strong>OneHOI</strong> iteratively generate and edit scenes step by
+                    step.</p>
+
+                <div class="demo-workflow-nav" id="demo-workflow-nav"></div>
+
+                <div class="demo-step-label" id="demo-step-label">HOI Generation</div>
+                <div class="demo-steps-nav" id="demo-steps-nav"></div>
+
+                <div class="demo-interface">
+                    <!-- Input side -->
+                    <div class="demo-panel demo-input-panel">
+                        <div class="demo-panel-header">Input</div>
+                        <div class="demo-input-row">
+                            <div class="demo-field">
+                                <label>Prompt</label>
+                                <div class="demo-prompt-box" id="demo-prompt"></div>
+                            </div>
+                        </div>
+                        <div class="demo-images-row">
+                            <div class="demo-img-container">
+                                <label>Source Image</label>
+                                <div class="demo-img-wrap">
+                                    <img id="demo-source" style="display:none" alt="Source image">
+                                    <div class="demo-img-overlay" id="demo-source-overlay">
+                                        <i class="fas fa-image"></i>
+                                        <span>No source (generation)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="demo-img-container">
+                                <label>Mask / Layout</label>
+                                <div class="demo-img-wrap">
+                                    <img id="demo-mask" style="display:none" alt="Mask">
+                                    <div class="demo-img-overlay" id="demo-mask-overlay">
+                                        <i class="fas fa-draw-polygon"></i>
+                                        <span>No mask</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="demo-action-btn" id="demo-action-btn" disabled>Generate</button>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="demo-arrow">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+
+                    <!-- Output side -->
+                    <div class="demo-panel demo-output-panel">
+                        <div class="demo-panel-header">Output</div>
+                        <div class="demo-output-wrap">
+                            <img id="demo-output" style="display:none" alt="Generated output">
+                            <div class="demo-img-overlay" id="demo-output-overlay">
+                                <i class="fas fa-hourglass-half"></i>
+                                <span>Waiting...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Abstract -->
+        <section class="abstract" id="abstract">
+            <div class="container">
+                <h2><i class="fas fa-align-left"></i> Abstract</h2>
+                <p>
+                    Human-Object Interaction (HOI) modelling captures how humans act upon and relate to objects,
+                    typically expressed as &langle;person, action, object&rangle; triplets. Existing approaches split
+                    into two disjoint families: HOI generation synthesises scenes from structured triplets and layout,
+                    but fails to integrate mixed conditions like HOI and object-only entities; and HOI editing modifies
+                    interactions via text, yet struggles to decouple pose from physical contact and scale to multiple
+                    interactions. We introduce <strong>OneHOI</strong>, a unified diffusion transformer framework that
+                    consolidates HOI generation and editing into a single conditional denoising process driven by shared
+                    structured interaction representations. At its core, the Relational Diffusion Transformer (R-DiT)
+                    models verb-mediated relations through role- and instance-aware HOI tokens, layout-based spatial
+                    Action Grounding, a Structured HOI Attention to enforce interaction topology, and HOI RoPE to
+                    disentangle multi-HOI scenes. Trained jointly with modality dropout on our HOI-Edit-44K, along with
+                    HOI and object-centric datasets, <strong>OneHOI</strong> supports layout-guided, layout-free,
+                    arbitrary-mask, and mixed-condition control, achieving state-of-the-art results across both HOI
+                    generation and editing.
+                </p>
+            </div>
+        </section>
+
+        <!-- Related Links -->
+        <section class="related-links" id="related-links">
+            <div class="container">
+                <h2><i class="fas fa-link"></i> Related Links</h2>
+                <ul class="links-list">
+                    <li><a href="https://jiuntian.github.io/interactdiffusion/" target="_blank">InteractDiffusion:
+                            Interaction Control in Text-to-Image Diffusion Models</a></li>
+                    <li><a href="https://jiuntian.github.io/interactedit/" target="_blank">InteractEdit: Zero-Shot
+                            Editing of Human-Object Interactions in Images</a></li>
+                    <li><a href="https://bfl.ai/models/flux-kontext" target="_blank">FLUX.1 Kontext</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BibTeX -->
+        <section class="bibtex" id="bibtex">
+            <div class="container">
+                <h2><i class="fas fa-quote-left"></i> BibTeX</h2>
+                <p class="bibtex-prompt">If you use our work in your research, please cite:</p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyBibtex()" title="Copy to clipboard"><i
+                            class="fas fa-copy"></i></button>
+                    <pre><code id="bibtex-code">@inproceedings{hoe2026onehoi,
+  title={OneHOI: Unifying Human-Object Interaction Generation and Editing},
+  author={Hoe, Jiun Tian and Hu, Weipeng and Jiang, Xudong and Tan, Yap-Peng and Chan, Chee Seng},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2026}
+}</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>This website was created in collaboration with agent coding.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyBibtex() {
+            const code = document.getElementById('bibtex-code').innerText;
+            navigator.clipboard.writeText(code).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    btn.innerHTML = '<i class="fas fa-copy"></i>';
+                }, 2000);
+            });
+        }
+    </script>
+    <script src="demo.js"></script>
+</body>
+
+</html>
