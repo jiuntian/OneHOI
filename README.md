@@ -57,7 +57,7 @@ Human-Object Interaction (HOI) modelling captures how humans act upon and relate
 
 ## Related Links
 
-- [InteractDiffusion: Interaction Control in Text-to-Image Diffusion Models](https://jiuntian.github.io/interactdiffusion/)
+- [InteractDiffusion (CVPR 2024): Interaction Control in Text-to-Image Diffusion Models](https://jiuntian.github.io/interactdiffusion/)
 - [InteractEdit: Zero-Shot Editing of Human-Object Interactions in Images](https://jiuntian.github.io/interactedit/)
 - [FLUX.1 Kontext](https://bfl.ai/models/flux-kontext)
 
