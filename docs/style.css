@@ -70,7 +70,7 @@ header {
 
 .title-main {
     color: var(--text-primary);
-    background: linear-gradient(135deg, var(--primary), #e6c800);
+    background: linear-gradient(135deg, #d4a800, #a07800);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -101,7 +101,7 @@ header {
 }
 
 .author sup {
-    color: #c4a800;
+    color: #9a7d00;
     font-weight: 600;
 }
 
@@ -117,7 +117,7 @@ header {
 }
 
 .affiliation sup {
-    color: #c4a800;
+    color: #9a7d00;
     font-weight: 600;
 }
 

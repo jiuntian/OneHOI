@@ -15,7 +15,7 @@
   <sup>4</sup>VinUniversity
 </p>
 
-<p align="center"><b>CVPR 2026 (main) </b></p>
+<p align="center"><b>CVPR 2026 (Main)</b></p>
 
 <p align="center">
   <a href="#">
