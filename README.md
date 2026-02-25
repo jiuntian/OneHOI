@@ -26,8 +26,8 @@
     <img src="https://img.shields.io/badge/Code-Coming%20Soon-blue?style=for-the-badge&logo=github" alt="Code">
   </a>
   &nbsp;
-  <a href="#">
-    <img src="https://img.shields.io/badge/Data-Coming%20Soon-green?style=for-the-badge&logo=huggingface" alt="Data">
+  <a href="https://huggingface.co/datasets/jiuntian/hoiedit44k">
+    <img src="https://img.shields.io/badge/Data-HOI--Edit--44K-green?style=for-the-badge&logo=huggingface" alt="Data">
   </a>
 </p>
 
@@ -41,14 +41,16 @@
 ## 📰 News
 
 - **[2026/02]** 🎉 OneHOI is accepted to **CVPR 2026**!
+- **[2026/02]** 📦 [HOI-Edit-44K dataset](https://huggingface.co/datasets/jiuntian/hoiedit44k) is released!
 - **[2026/02]** 🌐 Project page is live!
 
 ## ✅ TODO
 
 - [ ] Release paper on arXiv
 - [ ] Release inference code and pretrained models
-- [ ] Release HOI-Edit-44K dataset
+- [x] Release HOI-Edit-44K dataset
 - [ ] Release training code
+- [ ] Release Multi HOI Editing Benchmark
 
 ## Abstract
 
