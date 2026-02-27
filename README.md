@@ -27,7 +27,7 @@
   </a>
   &nbsp;
   <a href="https://huggingface.co/datasets/jiuntian/hoiedit44k">
-    <img src="https://img.shields.io/badge/Data-HOI--Edit--44K-green?style=for-the-badge&logo=huggingface" alt="Data">
+    <img src="https://img.shields.io/badge/Data-HOI--Edit--44K-green?style=for-the-badge&logo=huggingface" alt="Dataset">
   </a>
 </p>
 
