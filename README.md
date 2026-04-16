@@ -18,8 +18,8 @@
 <p align="center"><b>CVPR 2026 (Main)</b></p>
 
 <p align="center">
-  <a href="#">
-    <img src="https://img.shields.io/badge/Paper-Coming%20Soon-red?style=for-the-badge&logo=adobeacrobatreader" alt="Paper">
+  <a href="https://arxiv.org/abs/2604.14062" target="_blank">
+    <img src="https://img.shields.io/badge/Paper-arXiv-red?style=for-the-badge&logo=arxiv" alt="Paper">
   </a>
   &nbsp;
   <a href="https://github.com/jiuntian/OneHOI">
@@ -46,7 +46,7 @@
 
 ## ✅ TODO
 
-- [ ] Release paper on arXiv
+- [x] Release paper on arXiv
 - [ ] Release inference code and pretrained models
 - [x] Release HOI-Edit-44K dataset
 - [ ] Release training code
