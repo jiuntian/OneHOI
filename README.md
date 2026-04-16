@@ -43,6 +43,7 @@
 - **[2026/02]** 🎉 OneHOI is accepted to **CVPR 2026**!
 - **[2026/02]** 📦 [HOI-Edit-44K dataset](https://huggingface.co/datasets/jiuntian/hoiedit44k) is released!
 - **[2026/02]** 🌐 Project page is live!
+- - **[2026/04]** 🌐 Paper is now ready!
 
 ## ✅ TODO
 
