@@ -1,0 +1,7 @@
+torch==2.11.0
+torchvision==0.26.0
+diffusers
+transformers
+safetensors
+accelerate
+peft

@@ -113,3 +113,5 @@ mixed-hoi*.jpg
 debug*.jpg
 fix_hoi_synthsis_datasets.sh
 eligen_bf16.safetensors
+
+models/
